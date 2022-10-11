@@ -4,12 +4,8 @@ import gui.hashmap.panel.ControlPanel;
 import gui.hashmap.panel.HashMapPanel;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.HeadlessException;
-import java.awt.Insets;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.math.BigDecimal;
 
 public class HashMapGUI extends JFrame {
@@ -43,6 +39,10 @@ public class HashMapGUI extends JFrame {
     }
 
     private void initLayout() {
+        Image bufferedImage = new BufferedImage(1000, 1000, Image.SCALE_DEFAULT);
+
+        hashmapPanel.setImage(bufferedImage);
+
         getContentPane().setLayout(new GridBagLayout());
         Insets panelInsets = new Insets(DEFAULT_INSET, DEFAULT_INSET, DEFAULT_INSET, DEFAULT_INSET);
 
