@@ -1,13 +1,13 @@
-package gui.hashmap.panel;
+package gui.hashmap.panel.image.arrow;
 
 import java.awt.*;
 
-public class Arrow {
+public class ArrowDrawer {
     private int width;
     private int height;
     private Color color;
 
-    public Arrow(int width, int height, Color color) {
+    public ArrowDrawer(int width, int height, Color color) {
         this.width = width;
         this.height = height;
         this.color = color;

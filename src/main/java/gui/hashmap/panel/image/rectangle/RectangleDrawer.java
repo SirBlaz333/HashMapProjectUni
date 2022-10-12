@@ -1,15 +1,15 @@
-package gui.hashmap;
+package gui.hashmap.panel.image.rectangle;
 
 import java.awt.*;
 
-public class MapRectangle {
+public class RectangleDrawer {
     private int side = 100;
     private Color color = Color.blue;
     private boolean filling = false;
 
-    public MapRectangle(){}
+    public RectangleDrawer(){}
 
-    public MapRectangle(int side, Color color, boolean filling) {
+    public RectangleDrawer(int side, Color color, boolean filling) {
         this.side = side;
         this.color = color;
         this.filling = filling;

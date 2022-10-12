@@ -1,4 +1,4 @@
-package gui.hashmap.panel.text;
+package gui.hashmap.panel.image.text;
 
 import java.awt.*;
 
