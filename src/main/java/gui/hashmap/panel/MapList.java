@@ -14,7 +14,7 @@ public class MapList {
         this.x = x;
     }
 
-    public void draw(Graphics graphics, int x, int y){
+    public void draw(Graphics graphics){
         graphics.drawOval(x, y, radius, radius);
     }
 }
