@@ -1,13 +1,13 @@
-package gui.hashmap.panel;
+package gui.hashmap.panel.image.circle;
 
 import java.awt.*;
 
-public class MapList {
+public class CircleDrawer {
     private int radius;
 
-    public MapList(){}
+    public CircleDrawer(){}
 
-    public MapList(int radius) {
+    public CircleDrawer(int radius) {
         this.radius = radius;
     }
 
