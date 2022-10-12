@@ -4,17 +4,14 @@ import java.awt.*;
 
 public class MapList {
     private int radius;
-    private int x, y;
 
     public MapList(){}
 
-    public MapList(int radius, int x, int y) {
+    public MapList(int radius) {
         this.radius = radius;
-        this.y = y;
-        this.x = x;
     }
 
-    public void draw(Graphics graphics){
+    public void draw(Graphics graphics, int x, int y){
         graphics.drawOval(x, y, radius, radius);
     }
 }
