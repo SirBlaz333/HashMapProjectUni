@@ -1,4 +1,4 @@
-package gui.hashmap.panel.image.circle;
+package gui.hashmap.panel.image.figure.circle;
 
 import java.awt.*;
 
