@@ -1,4 +1,4 @@
-package gui.hashmap.panel.image.arrow;
+package gui.hashmap.panel.image.figure.arrow;
 
 import java.awt.*;
 

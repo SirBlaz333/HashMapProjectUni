@@ -1,4 +1,4 @@
-package gui.hashmap.panel.image.rectangle;
+package gui.hashmap.panel.image.figure.rectangle;
 
 import java.awt.*;
 
