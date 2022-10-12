@@ -3,13 +3,13 @@ package gui.hashmap;
 import gui.hashmap.panel.ControlPanel;
 import gui.hashmap.panel.HashMapPanel;
 
+import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.HeadlessException;
 import java.awt.Insets;
-import java.awt.image.BufferedImage;
 import java.math.BigDecimal;
 
 public class HashMapGUI extends JFrame {
