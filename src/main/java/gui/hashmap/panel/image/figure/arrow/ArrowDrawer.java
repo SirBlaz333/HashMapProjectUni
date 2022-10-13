@@ -1,6 +1,5 @@
 package gui.hashmap.panel.image.figure.arrow;
 
-import gui.hashmap.panel.image.Colorable;
 import gui.hashmap.panel.image.figure.Figure;
 
 import java.awt.*;
