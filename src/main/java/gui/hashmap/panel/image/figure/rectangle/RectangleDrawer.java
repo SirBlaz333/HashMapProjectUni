@@ -15,6 +15,7 @@ public class RectangleDrawer implements Figure, Colorable {
 
     @Override
     public void draw(Graphics graphics, int x, int y){
+        graphics.setColor(color);
         graphics.drawRect(x, y, side, side);
     }
     @Override
