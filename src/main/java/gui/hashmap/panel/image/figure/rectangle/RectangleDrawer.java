@@ -5,12 +5,13 @@ import gui.hashmap.panel.image.figure.Figure;
 
 import java.awt.*;
 
-public class RectangleDrawer implements Figure, Colorable {
+public class RectangleDrawer implements Figure{
     private final int side;
     private Color color;
 
-    public RectangleDrawer(int side) {
+    public RectangleDrawer(int side, Color color) {
         this.side = side;
+        this.color = color;
     }
 
     @Override
@@ -18,8 +19,5 @@ public class RectangleDrawer implements Figure, Colorable {
         graphics.setColor(color);
         graphics.drawRect(x, y, side, side);
     }
-    @Override
-    public void setColor(Color color) {
-        this.color = color;
-    }
+
 }
