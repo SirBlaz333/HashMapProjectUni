@@ -5,14 +5,15 @@ import gui.hashmap.panel.image.figure.Figure;
 
 import java.awt.*;
 
-public class ArrowDrawer implements Figure, Colorable {
+public class ArrowDrawer implements Figure {
     private final int width;
     private final int height;
-    private Color color;
+    private final Color color;
 
-    public ArrowDrawer(int width, int height) {
+    public ArrowDrawer(int width, int height, Color color) {
         this.width = width;
         this.height = height;
+        this.color = color;
     }
 
     @Override
@@ -43,10 +44,5 @@ public class ArrowDrawer implements Figure, Colorable {
         graphics.setColor(color);
         graphics.drawPolygon(polygon);
         graphics.fillPolygon(polygon);
-    }
-
-    @Override
-    public void setColor(Color color) {
-        this.color = color;
     }
 }
