@@ -9,10 +9,11 @@ public class TextDrawerImpl implements TextDrawer {
     private final int width;
     private Color color;
 
-    public TextDrawerImpl(int fontSize, int height, int width) {
+    public TextDrawerImpl(int fontSize, int height, int width, Color color) {
         this.fontSize = fontSize;
         this.height = height;
         this.width = width;
+        this.color = color;
     }
 
     @Override
@@ -37,8 +38,4 @@ public class TextDrawerImpl implements TextDrawer {
         graphics.drawString(text, textX + x, textY + y);
     }
 
-    @Override
-    public void setColor(Color color) {
-        this.color = color;
-    }
 }
