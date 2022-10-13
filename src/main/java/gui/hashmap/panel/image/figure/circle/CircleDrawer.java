@@ -9,8 +9,6 @@ public class CircleDrawer implements Figure, Colorable {
     private int radius;
     private Color color;
 
-    public CircleDrawer(){}
-
     public CircleDrawer(int radius) {
         this.radius = radius;
     }
