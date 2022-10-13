@@ -5,12 +5,13 @@ import gui.hashmap.panel.image.figure.Figure;
 
 import java.awt.*;
 
-public class CircleDrawer implements Figure, Colorable {
+public class CircleDrawer implements Figure {
     private int radius;
     private Color color;
 
-    public CircleDrawer(int radius) {
+    public CircleDrawer(int radius, Color color) {
         this.radius = radius;
+        this.color = color;
     }
 
     @Override
@@ -18,11 +19,6 @@ public class CircleDrawer implements Figure, Colorable {
 
         graphics.setColor(color);
         graphics.drawOval(x, y, radius, radius);
-    }
-
-    @Override
-    public void setColor(Color color){
-        this.color = color;
     }
 
 }
