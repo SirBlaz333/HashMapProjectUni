@@ -1,7 +1,5 @@
 package gui.hashmap.panel.image.text;
 
-import gui.hashmap.panel.image.Colorable;
-
 import java.awt.*;
 
 public interface TextDrawer{
