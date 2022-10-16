@@ -4,7 +4,12 @@ import gui.hashmap.panel.ControlPanel;
 import gui.hashmap.panel.HashMapPanel;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.HeadlessException;
+import java.awt.Insets;
 import java.math.BigDecimal;
 
 public class HashMapGUI extends JFrame {
@@ -28,8 +33,8 @@ public class HashMapGUI extends JFrame {
     public HashMapGUI() throws HeadlessException {
         super(TITLE);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        hashmapPanel = new HashMapPanel(new GridLayout());
-        controlPanel = new ControlPanel(new GridLayout(), hashmapPanel);
+        hashmapPanel = new HashMapPanel(new BorderLayout());
+        controlPanel = new ControlPanel(new BorderLayout());
         init();
     }
 
