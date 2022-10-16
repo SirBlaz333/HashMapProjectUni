@@ -21,7 +21,7 @@ public class GetListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Integer key = Integer.getInteger(keyTextField.getText());
+        Integer key = Integer.parseInt(keyTextField.getText());
         Integer value = map.get(key);
         valueTextField.setText(value.toString());
     }
