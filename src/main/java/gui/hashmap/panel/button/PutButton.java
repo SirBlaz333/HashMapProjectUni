@@ -10,8 +10,8 @@ import java.util.Map;
 public class PutButton extends JButton {
     private static final String TEXT = "Put";
 
-    public PutButton(JTextField keyTextField, JTextField valueTextField, Map<Integer, Integer> map, HashMapPanel hashMapPanel, ImageProducer imageProducer){
-        addActionListener(new PutListener(keyTextField, valueTextField, map, hashMapPanel, imageProducer));
+    public PutButton(JTextField keyTextField, JTextField valueTextField, Map<Integer, Integer> map){
+        addActionListener(new PutListener(keyTextField, valueTextField, map));
         setText(TEXT);
     }
 }
