@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class ImageProducer {
-    private static final int DEFAULT_SIZE = 16;
+    private static final int DEFAULT_SIZE = 4;
     private static final double LOAD_FACTOR = 0.75;
     private static final int MULTIPLICATION = 2;
     public static final int FONT_SIZE = 20;
@@ -44,6 +44,9 @@ public class ImageProducer {
                 .orElse(MIN_SIZE);
         int imageWidth = (longestListSize + 1) * blockSize * 2;
         int imageHeight = (arraySize + 2) * blockSize;
+        if(map.isEmpty()){
+            imageWidth += blockSize;
+        }
         BufferedImage bufferedImage = createImage(imageWidth, imageHeight);
         drawMap(bufferedImage.getGraphics(), remainderMap, arraySize);
         return bufferedImage;
@@ -93,11 +96,14 @@ public class ImageProducer {
     }
 
     private void drawList(Graphics graphics, List<Integer> list, int x, int y) {
-        for (Integer integer : list) {
+        for (int i = 0; i < list.size(); i++) {
+            Integer integer = list.get(i);
             circleDrawer.draw(graphics, x, y);
             textDrawer.draw(graphics, x, y, integer);
             x += blockSize;
-            arrowDrawer.draw(graphics, x, y);
+            if(i < list.size() - 1){
+                arrowDrawer.draw(graphics, x, y);
+            }
             x += blockSize;
         }
     }
