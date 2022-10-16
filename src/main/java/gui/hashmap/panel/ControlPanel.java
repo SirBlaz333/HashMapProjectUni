@@ -73,7 +73,8 @@ public class ControlPanel extends GUIPanel {
     }
 
     private NumberFormatter createNumberFormatter(){
-        NumberFormat numberFormat = NumberFormat.getInstance();
+        NumberFormat numberFormat = NumberFormat.getIntegerInstance();
+        numberFormat.setGroupingUsed(false);
         NumberFormatter numberFormatter = new NumberFormatter(numberFormat);
         numberFormatter.setValueClass(Integer.class);
         numberFormatter.setMinimum(Integer.MIN_VALUE);
