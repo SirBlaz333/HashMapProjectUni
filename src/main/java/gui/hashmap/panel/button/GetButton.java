@@ -1,7 +1,6 @@
-package gui.hashmap.panel.button.listener;
+package gui.hashmap.panel.button;
 
-import gui.hashmap.panel.HashMapPanel;
-import gui.hashmap.panel.image.ImageProducer;
+import gui.hashmap.panel.button.listener.GetListener;
 
 import javax.swing.*;
 import java.util.Map;
