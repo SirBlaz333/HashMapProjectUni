@@ -12,18 +12,14 @@ import java.util.Map;
 public class ClearListener implements ActionListener {
 
     private final Map<Integer, Integer> map;
-    private final HashMapPanel hashMapPanel;
-    private final ImageProducer imageProducer;
 
-    public ClearListener(Map<Integer, Integer> map, HashMapPanel hashMapPanel, ImageProducer imageProducer) {
+
+    public ClearListener(Map<Integer, Integer> map) {
         this.map = map;
-        this.hashMapPanel = hashMapPanel;
-        this.imageProducer = imageProducer;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         map.clear();
-        hashMapPanel.setImage(imageProducer.produce(map));
     }
 }
