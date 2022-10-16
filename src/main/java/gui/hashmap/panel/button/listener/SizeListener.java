@@ -8,21 +8,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
 
-public class GetListener implements ActionListener {
-    private final JTextField keyTextField;
+public class SizeListener implements ActionListener {
     private final JTextField valueTextField;
     private final Map<Integer, Integer> map;
 
-    public GetListener(JTextField keyTextField, JTextField valueTextField1, Map<Integer, Integer> map) {
-        this.keyTextField = keyTextField;
-        this.valueTextField = valueTextField1;
+    public SizeListener(JTextField valueTextField, Map<Integer, Integer> map) {
+        this.valueTextField = valueTextField;
         this.map = map;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Integer key = Integer.parseInt(keyTextField.getText());
-        Integer value = map.get(key);
+        Integer value = map.size();
         valueTextField.setText(value.toString());
     }
 }
