@@ -25,8 +25,8 @@ public class PutListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Integer key = Integer.getInteger(keyTextField.getText());
-        Integer value = Integer.getInteger(valueTextField.getText());
+        Integer key = Integer.parseInt(keyTextField.getText());
+        Integer value = Integer.parseInt(valueTextField.getText());
         map.put(key, value);
         hashMapPanel.setImage(imageProducer.produce(map));
     }
