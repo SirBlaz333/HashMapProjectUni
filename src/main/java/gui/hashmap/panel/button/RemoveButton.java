@@ -10,8 +10,8 @@ import java.util.Map;
 public class RemoveButton extends JButton{
     private static final String TEXT = "Remove";
 
-    public RemoveButton(JTextField keyTextField, Map<Integer, Integer> map, HashMapPanel hashMapPanel, ImageProducer imageProducer){
-        addActionListener(new RemoveListener(keyTextField, map, hashMapPanel, imageProducer));
+    public RemoveButton(JTextField keyTextField, Map<Integer, Integer> map){
+        addActionListener(new RemoveListener(keyTextField, map));
         setText(TEXT);
     }
 }
