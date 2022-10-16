@@ -63,7 +63,7 @@ public class ImageProducer {
     private Map<Integer, List<Integer>> toRemainderMap(Map<Integer, Integer> map, int arraySize) {
         Map<Integer, List<Integer>> remainderMap = new HashMap<>();
         for (Integer key : map.keySet()) {
-            int remainder = key % arraySize;
+            int remainder = Math.floorMod(key, arraySize);
             int objectToAdd = map.get(key);
             List<Integer> list = remainderMap.get(remainder);
             if (list == null) {
