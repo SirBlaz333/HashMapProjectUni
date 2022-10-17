@@ -3,6 +3,8 @@ package gui.hashmap.panel;
 import gui.hashmap.panel.button.listener.ClearListener;
 import gui.hashmap.panel.button.listener.DrawImageListener;
 import gui.hashmap.panel.button.listener.GetListener;
+import gui.hashmap.panel.button.listener.KeyFieldListener;
+import gui.hashmap.panel.button.listener.KeyValueFieldListener;
 import gui.hashmap.panel.button.listener.PutListener;
 import gui.hashmap.panel.button.listener.RemoveListener;
 import gui.hashmap.panel.button.listener.SizeListener;
