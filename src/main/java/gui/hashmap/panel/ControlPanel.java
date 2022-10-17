@@ -1,11 +1,6 @@
 package gui.hashmap.panel;
 
-import gui.hashmap.panel.button.listener.ClearListener;
-import gui.hashmap.panel.button.listener.DrawImageListener;
-import gui.hashmap.panel.button.listener.GetListener;
-import gui.hashmap.panel.button.listener.PutListener;
-import gui.hashmap.panel.button.listener.RemoveListener;
-import gui.hashmap.panel.button.listener.SizeListener;
+import gui.hashmap.panel.button.listener.*;
 
 import javax.swing.*;
 import javax.swing.text.NumberFormatter;
@@ -35,6 +30,8 @@ public class ControlPanel extends GUIPanel {
         JFormattedTextField valueTextField = new JFormattedTextField(numberFormatter);
 
         DrawImageListener drawImageListener = new DrawImageListener(hashMapPanel, map);
+        KeyFieldListener keyFieldListener = new KeyFieldListener(keyTextField);
+        KeyValueFieldListener keyValueFieldListener = new KeyValueFieldListener(keyTextField, valueTextField);
         PutListener putListener = new PutListener(keyTextField, valueTextField, map);
         GetListener getListener = new GetListener(keyTextField, valueTextField, map);
         RemoveListener removeListener = new RemoveListener(keyTextField, map);
@@ -49,11 +46,14 @@ public class ControlPanel extends GUIPanel {
 
         putButton.addActionListener(drawImageListener);
         putButton.addActionListener(putListener);
+        putButton.addActionListener(keyValueFieldListener);
         removeButton.addActionListener(drawImageListener);
         removeButton.addActionListener(removeListener);
+        removeButton.addActionListener(keyFieldListener);
         clearButton.addActionListener(drawImageListener);
         clearButton.addActionListener(clearListener);
         getButton.addActionListener(getListener);
+        getButton.addActionListener(keyFieldListener);
         sizeButton.addActionListener(sizeListener);
 
         keyTextField.setBounds(100, 100, 100 ,100);
