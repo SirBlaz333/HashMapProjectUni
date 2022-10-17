@@ -6,6 +6,7 @@ import gui.hashmap.panel.button.listener.GetListener;
 import gui.hashmap.panel.button.listener.PutListener;
 import gui.hashmap.panel.button.listener.RemoveListener;
 import gui.hashmap.panel.button.listener.SizeListener;
+import gui.hashmap.panel.formatter.IntegerFormatter;
 
 import javax.swing.*;
 import javax.swing.text.NumberFormatter;
@@ -75,10 +76,6 @@ public class ControlPanel extends GUIPanel {
     private NumberFormatter createNumberFormatter(){
         NumberFormat numberFormat = NumberFormat.getIntegerInstance();
         numberFormat.setGroupingUsed(false);
-        NumberFormatter numberFormatter = new NumberFormatter(numberFormat);
-        numberFormatter.setValueClass(Integer.class);
-        numberFormatter.setMinimum(Integer.MIN_VALUE);
-        numberFormatter.setMaximum(Integer.MAX_VALUE);
-        return numberFormatter;
+        return new IntegerFormatter(numberFormat);
     }
 }
