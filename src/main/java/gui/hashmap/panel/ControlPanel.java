@@ -54,9 +54,6 @@ public class ControlPanel extends GUIPanel {
 
         JLabel keyLabel = new JLabel("Key", Label.RIGHT);
         JLabel valueLabel = new JLabel("Value", Label.RIGHT);
-        Font font = new Font("Serif", Font.BOLD, 18);
-        keyLabel.setFont(font);
-        valueLabel.setFont(font);
 
         putButton.addActionListener(drawImageListener);
         putButton.addActionListener(putListener);
@@ -111,7 +108,7 @@ public class ControlPanel extends GUIPanel {
                 0,
                 0,
                 GridBagConstraints.CENTER,
-                GridBagConstraints.NONE,
+                GridBagConstraints.BOTH,
                 panelInsets,
                 0,
                 0
