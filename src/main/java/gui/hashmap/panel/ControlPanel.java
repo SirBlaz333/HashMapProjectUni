@@ -52,8 +52,14 @@ public class ControlPanel extends GUIPanel {
         JButton clearButton = new JButton("Clear");
         JButton sizeButton = new JButton("Size");
 
-        JLabel keyLabel = new JLabel("Key", Label.RIGHT);
-        JLabel valueLabel = new JLabel("Value", Label.RIGHT);
+        keyTextField.setPreferredSize(new Dimension(70, 20));
+        valueTextField.setPreferredSize(new Dimension(70, 20));
+
+        JLabel keyLabel = new JLabel("Key");
+        JLabel valueLabel = new JLabel("Value");
+
+        keyLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        valueLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
         putButton.addActionListener(drawImageListener);
         putButton.addActionListener(putListener);
@@ -82,7 +88,7 @@ public class ControlPanel extends GUIPanel {
                 GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH,
                 panelInsets,
-                100,
+                0,
                 0
         );
 
@@ -96,7 +102,7 @@ public class ControlPanel extends GUIPanel {
                 GridBagConstraints.EAST,
                 GridBagConstraints.BOTH,
                 panelInsets,
-                100,
+                0,
                 0
         );
 
@@ -121,8 +127,8 @@ public class ControlPanel extends GUIPanel {
                 1,
                 0,
                 0,
-                GridBagConstraints.CENTER,
-                GridBagConstraints.BOTH,
+                GridBagConstraints.WEST,
+                GridBagConstraints.VERTICAL,
                 panelInsets,
                 0,
                 0
@@ -135,8 +141,8 @@ public class ControlPanel extends GUIPanel {
                 1,
                 1,
                 0,
-                GridBagConstraints.CENTER,
-                GridBagConstraints.BOTH,
+                GridBagConstraints.WEST,
+                GridBagConstraints.VERTICAL,
                 panelInsets,
                 0,
                 0
