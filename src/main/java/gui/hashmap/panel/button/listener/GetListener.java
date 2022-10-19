@@ -21,8 +21,12 @@ public class GetListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Integer key = Integer.parseInt(keyTextField.getText());
-        Integer value = map.get(key);
-        valueTextField.setText(value.toString());
+        try {
+            Integer key = Integer.parseInt(keyTextField.getText());
+            Integer value = map.get(key);
+            valueTextField.setText(value.toString());
+        } catch (NumberFormatException exception){
+            System.err.println("Cannot read integer! " + exception.getMessage());
+        }
     }
 }
