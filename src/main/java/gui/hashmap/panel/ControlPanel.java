@@ -44,7 +44,7 @@ public class ControlPanel extends GUIPanel {
         GetListener getListener = new GetListener(keyTextField, valueTextField, map);
         RemoveListener removeListener = new RemoveListener(keyTextField, map);
         ClearListener clearListener = new ClearListener(map);
-        SizeListener sizeListener = new SizeListener(valueTextField, map);
+        SizeListener sizeListener = new SizeListener(map);
 
         JButton putButton = new JButton("Put");
         JButton getButton = new JButton("Get");
