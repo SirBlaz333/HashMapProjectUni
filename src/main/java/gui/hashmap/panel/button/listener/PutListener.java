@@ -18,8 +18,12 @@ public class PutListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Integer key = Integer.parseInt(keyTextField.getText());
-        Integer value = Integer.parseInt(valueTextField.getText());
-        map.put(key, value);
+        try{
+            Integer key = Integer.parseInt(keyTextField.getText());
+            Integer value = Integer.parseInt(valueTextField.getText());
+            map.put(key, value);
+        } catch (NumberFormatException exception){
+            System.err.println("Cannot read integer! " + exception.getMessage());
+        }
     }
 }
