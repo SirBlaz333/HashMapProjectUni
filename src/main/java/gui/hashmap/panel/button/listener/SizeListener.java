@@ -9,17 +9,15 @@ import java.awt.event.ActionListener;
 import java.util.Map;
 
 public class SizeListener implements ActionListener {
-    private final JTextField valueTextField;
     private final Map<Integer, Integer> map;
 
-    public SizeListener(JTextField valueTextField, Map<Integer, Integer> map) {
-        this.valueTextField = valueTextField;
+    public SizeListener(Map<Integer, Integer> map) {
         this.map = map;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Integer value = map.size();
-        valueTextField.setText(value.toString());
+        JOptionPane.showMessageDialog(null, "Size of hash map is " + value, "Size", JOptionPane.INFORMATION_MESSAGE);
     }
 }
