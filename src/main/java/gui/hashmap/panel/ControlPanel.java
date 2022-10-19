@@ -21,28 +21,28 @@ public class ControlPanel extends GUIPanel {
     private final HashMapPanel hashMapPanel;
     private final Map<Integer, Integer> map;
 
-    private final int TOP_BUTTON_ROW = 2;
-    private final int BUTTON_COLUMN = 0;
-    private final int BUTTON_GRID_WIDTH = 2;
-    private final int BUTTON_GRID_HEIGHT = 1;
+    private static final int TOP_BUTTON_ROW = 2;
+    private static final int BUTTON_COLUMN = 0;
+    private static final int BUTTON_GRID_WIDTH = 2;
+    private static final int BUTTON_GRID_HEIGHT = 1;
 
-    private final int ELEMENT_WEIGHTX = 0;
-    private final int ELEMENT_WEIGHTY = 0;
-    private final int ELEMENT_PADX = 0;
-    private final int ELEMENT_PADY = 0;
+    private static final int ELEMENT_WEIGHTX = 0;
+    private static final int ELEMENT_WEIGHTY = 0;
+    private static final int ELEMENT_PADX = 0;
+    private static final int ELEMENT_PADY = 0;
 
-    private final int LABEL_COLUMN = 0;
-    private final int TOP_LABEL_ROW = 0;
-    private final int LABEL_GRID_WIDTH = 1;
-    private final int LABEL_GRID_HEIGHT = 1;
+    private static final int LABEL_COLUMN = 0;
+    private static final int TOP_LABEL_ROW = 0;
+    private static final int LABEL_GRID_WIDTH = 1;
+    private static final int LABEL_GRID_HEIGHT = 1;
 
-    private final int TEXTFIELD_COLUMN = 1;
-    private final int TOP_TEXTFIELD_ROW = 0;
-    private final int TEXTFIELD_GRID_WIDTH = 1;
-    private final int TEXTFIELD_GRID_HEIGHT = 1;
-    private final int TEXTFIELD_WEIGHTX = 1;
-    private final int TEXTFIELD_WEIGHTY = 0;
-    private final Insets OBJECT_INSETS = new Insets(5, 5, 5, 5);
+    private static final int TEXTFIELD_COLUMN = 1;
+    private static final int TOP_TEXTFIELD_ROW = 0;
+    private static final int TEXTFIELD_GRID_WIDTH = 1;
+    private static final int TEXTFIELD_GRID_HEIGHT = 1;
+    private static final int TEXTFIELD_WEIGHTX = 1;
+    private static final int TEXTFIELD_WEIGHTY = 0;
+    private static final Insets OBJECT_INSETS = new Insets(5, 5, 5, 5);
 
 
 
@@ -84,8 +84,8 @@ public class ControlPanel extends GUIPanel {
         clearButton.setBackground(Color.RED);
         sizeButton.setBackground(Color.BLUE);*/
 
-        keyTextField.setPreferredSize(new Dimension(70, 20));
-        valueTextField.setPreferredSize(new Dimension(70, 20));
+        keyTextField.setPreferredSize(new Dimension(120, 20));
+        valueTextField.setPreferredSize(new Dimension(120, 20));
 
         JLabel keyLabel = new JLabel("Key");
         JLabel valueLabel = new JLabel("Value");
