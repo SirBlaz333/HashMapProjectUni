@@ -20,6 +20,32 @@ import java.util.Map;
 public class ControlPanel extends GUIPanel {
     private final HashMapPanel hashMapPanel;
     private final Map<Integer, Integer> map;
+
+    private final int TOP_BUTTON_ROW = 2;
+    private final int BUTTON_COLUMN = 0;
+    private final int BUTTON_GRID_WIDTH = 2;
+    private final int BUTTON_GRID_HEIGHT = 1;
+
+    private final int ELEMENT_WEIGHTX = 0;
+    private final int ELEMENT_WEIGHTY = 0;
+    private final int ELEMENT_PADX = 0;
+    private final int ELEMENT_PADY = 0;
+
+    private final int LABEL_COLUMN = 0;
+    private final int TOP_LABEL_ROW = 0;
+    private final int LABEL_GRID_WIDTH = 1;
+    private final int LABEL_GRID_HEIGHT = 1;
+
+    private final int TEXTFIELD_COLUMN = 1;
+    private final int TOP_TEXTFIELD_ROW = 0;
+    private final int TEXTFIELD_GRID_WIDTH = 1;
+    private final int TEXTFIELD_GRID_HEIGHT = 1;
+    private final int TEXTFIELD_WEIGHTX = 1;
+    private final int TEXTFIELD_WEIGHTY = 0;
+    private final Insets OBJECT_INSETS = new Insets(5, 5, 5, 5);
+
+
+
     public ControlPanel(LayoutManager layoutManager, HashMapPanel hashMapPanel) {
         super(layoutManager);
         this.hashMapPanel = hashMapPanel;
@@ -52,6 +78,12 @@ public class ControlPanel extends GUIPanel {
         JButton clearButton = new JButton("Clear");
         JButton sizeButton = new JButton("Size");
 
+        /*putButton.setBackground(Color.GREEN);
+        getButton.setBackground(Color.GREEN);
+        removeButton.setBackground(Color.RED);
+        clearButton.setBackground(Color.RED);
+        sizeButton.setBackground(Color.BLUE);*/
+
         keyTextField.setPreferredSize(new Dimension(70, 20));
         valueTextField.setPreferredSize(new Dimension(70, 20));
 
@@ -75,142 +107,143 @@ public class ControlPanel extends GUIPanel {
 
 
 
-        GridBagLayout gb1 = new GridBagLayout();
-        Insets panelInsets = new Insets(5, 5, 5, 5);
+        GridBagLayout panelLayout = new GridBagLayout();
 
         GridBagConstraints keyLabelCons = new GridBagConstraints(
-                0,
-                0,
-                1,
-                1,
-                0,
-                0,
+                LABEL_COLUMN,
+                TOP_LABEL_ROW,
+                LABEL_GRID_WIDTH,
+                LABEL_GRID_HEIGHT,
+                ELEMENT_WEIGHTX,
+                ELEMENT_WEIGHTY,
                 GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH,
-                panelInsets,
-                0,
-                0
+                OBJECT_INSETS,
+                ELEMENT_PADX,
+                ELEMENT_PADY
         );
 
         GridBagConstraints valueLabelCons = new GridBagConstraints(
-                0,
-                1,
-                1,
-                1,
-                0,
-                0,
+                LABEL_COLUMN,
+                TOP_LABEL_ROW + 1,
+                LABEL_GRID_WIDTH,
+                LABEL_GRID_HEIGHT,
+                ELEMENT_WEIGHTX,
+                ELEMENT_WEIGHTY,
                 GridBagConstraints.EAST,
                 GridBagConstraints.BOTH,
-                panelInsets,
-                0,
-                0
-        );
-
-        GridBagConstraints putButtonCons = new GridBagConstraints(
-                0,
-                2,
-                2,
-                1,
-                0,
-                0,
-                GridBagConstraints.CENTER,
-                GridBagConstraints.BOTH,
-                panelInsets,
-                0,
-                0
+                OBJECT_INSETS,
+                ELEMENT_PADX,
+                ELEMENT_PADY
         );
 
         GridBagConstraints keyTextFieldCons = new GridBagConstraints(
-                1,
-                0,
-                1,
-                1,
-                0,
-                0,
+                TEXTFIELD_COLUMN,
+                TOP_TEXTFIELD_ROW,
+                TEXTFIELD_GRID_WIDTH,
+                TEXTFIELD_GRID_HEIGHT,
+                TEXTFIELD_WEIGHTX,
+                TEXTFIELD_WEIGHTY,
                 GridBagConstraints.WEST,
                 GridBagConstraints.VERTICAL,
-                panelInsets,
-                0,
-                0
+                OBJECT_INSETS,
+                ELEMENT_PADX,
+                ELEMENT_PADY
         );
 
         GridBagConstraints valueTextFieldCons = new GridBagConstraints(
-                1,
-                1,
-                1,
-                1,
-                1,
-                0,
+                TEXTFIELD_COLUMN,
+                TOP_TEXTFIELD_ROW + 1,
+                TEXTFIELD_GRID_WIDTH,
+                TEXTFIELD_GRID_HEIGHT,
+                TEXTFIELD_WEIGHTX,
+                TEXTFIELD_WEIGHTY,
                 GridBagConstraints.WEST,
                 GridBagConstraints.VERTICAL,
-                panelInsets,
-                0,
-                0
+                OBJECT_INSETS,
+                ELEMENT_PADX,
+                ELEMENT_PADY
         );
-        GridBagConstraints getButtonCons = new GridBagConstraints(
-                0,
-                3,
-                2,
-                1,
-                0,
-                0,
+
+        GridBagConstraints putButtonCons = new GridBagConstraints(
+                BUTTON_COLUMN,
+                TOP_BUTTON_ROW,
+                BUTTON_GRID_WIDTH,
+                BUTTON_GRID_HEIGHT,
+                ELEMENT_WEIGHTX,
+                ELEMENT_WEIGHTY,
                 GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH,
-                panelInsets,
-                0,
-                0
+                OBJECT_INSETS,
+                ELEMENT_PADX,
+                ELEMENT_PADY
+        );
+
+
+        GridBagConstraints getButtonCons = new GridBagConstraints(
+                BUTTON_COLUMN,
+                TOP_BUTTON_ROW + 1,
+                BUTTON_GRID_WIDTH,
+                BUTTON_GRID_HEIGHT,
+                ELEMENT_WEIGHTX,
+                ELEMENT_WEIGHTY,
+                GridBagConstraints.CENTER,
+                GridBagConstraints.BOTH,
+                OBJECT_INSETS,
+                ELEMENT_PADX,
+                ELEMENT_PADY
         );
 
         GridBagConstraints removeButtonCons = new GridBagConstraints(
-                0,
-                4,
-                2,
-                1,
-                0,
-                0,
+                BUTTON_COLUMN,
+                TOP_BUTTON_ROW + 2,
+                BUTTON_GRID_WIDTH,
+                BUTTON_GRID_HEIGHT,
+                ELEMENT_WEIGHTX,
+                ELEMENT_WEIGHTY,
                 GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH,
-                panelInsets,
-                0,
-                0
+                OBJECT_INSETS,
+                ELEMENT_PADX,
+                ELEMENT_PADY
         );
 
         GridBagConstraints clearButtonCons = new GridBagConstraints(
-                0,
-                5,
-                2,
-                1,
-                0,
-                0,
+                BUTTON_COLUMN,
+                TOP_BUTTON_ROW + 3,
+                BUTTON_GRID_WIDTH,
+                BUTTON_GRID_HEIGHT,
+                ELEMENT_WEIGHTX,
+                ELEMENT_WEIGHTY,
                 GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH,
-                panelInsets,
-                0,
-                0
+                OBJECT_INSETS,
+                ELEMENT_PADX,
+                ELEMENT_PADY
         );
         GridBagConstraints sizeButtonCons = new GridBagConstraints(
-                0,
-                6,
-                2,
-                1,
-                0,
-                0,
+                BUTTON_COLUMN,
+                TOP_BUTTON_ROW + 4,
+                BUTTON_GRID_WIDTH,
+                BUTTON_GRID_HEIGHT,
+                ELEMENT_WEIGHTX,
+                ELEMENT_WEIGHTY,
                 GridBagConstraints.CENTER,
                 GridBagConstraints.BOTH,
-                panelInsets,
-                0,
-                0
+                OBJECT_INSETS,
+                ELEMENT_PADX,
+                ELEMENT_PADY
         );
 
-        gb1.setConstraints(keyLabel, keyLabelCons);
-        gb1.setConstraints(putButton, putButtonCons);
-        gb1.setConstraints(keyTextField, keyTextFieldCons);
-        gb1.setConstraints(getButton, getButtonCons);
-        gb1.setConstraints(valueLabel, valueLabelCons);
-        gb1.setConstraints(valueTextField, valueTextFieldCons);
-        gb1.setConstraints(removeButton, removeButtonCons);
-        gb1.setConstraints(clearButton, clearButtonCons);
-        gb1.setConstraints(sizeButton, sizeButtonCons);
+        panelLayout.setConstraints(keyLabel, keyLabelCons);
+        panelLayout.setConstraints(putButton, putButtonCons);
+        panelLayout.setConstraints(keyTextField, keyTextFieldCons);
+        panelLayout.setConstraints(getButton, getButtonCons);
+        panelLayout.setConstraints(valueLabel, valueLabelCons);
+        panelLayout.setConstraints(valueTextField, valueTextFieldCons);
+        panelLayout.setConstraints(removeButton, removeButtonCons);
+        panelLayout.setConstraints(clearButton, clearButtonCons);
+        panelLayout.setConstraints(sizeButton, sizeButtonCons);
 
 
         add(keyLabel);
@@ -223,7 +256,7 @@ public class ControlPanel extends GUIPanel {
         add(clearButton);
         add(sizeButton);
 
-        setLayout(gb1);
+        setLayout(panelLayout);
     }
 
     private NumberFormatter createNumberFormatter(){
