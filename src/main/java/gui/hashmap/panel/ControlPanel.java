@@ -67,7 +67,7 @@ public class ControlPanel extends GUIPanel {
         KeyFieldListener keyFieldListener = new KeyFieldListener(keyTextField);
         KeyValueFieldListener keyValueFieldListener = new KeyValueFieldListener(keyTextField, valueTextField);
         PutListener putListener = new PutListener(keyTextField, valueTextField, map);
-        GetListener getListener = new GetListener(keyTextField, valueTextField, map);
+        GetListener getListener = new GetListener(keyTextField, map);
         RemoveListener removeListener = new RemoveListener(keyTextField, map);
         ClearListener clearListener = new ClearListener(map);
         SizeListener sizeListener = new SizeListener(map);
