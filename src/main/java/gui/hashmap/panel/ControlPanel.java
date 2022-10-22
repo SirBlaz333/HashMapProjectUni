@@ -3,18 +3,15 @@ package gui.hashmap.panel;
 import gui.hashmap.panel.button.listener.ClearListener;
 import gui.hashmap.panel.button.listener.DrawImageListener;
 import gui.hashmap.panel.button.listener.GetListener;
-import gui.hashmap.panel.button.listener.KeyFieldListener;
-import gui.hashmap.panel.button.listener.KeyValueFieldListener;
 import gui.hashmap.panel.button.listener.PutListener;
 import gui.hashmap.panel.button.listener.RemoveListener;
 import gui.hashmap.panel.button.listener.SizeListener;
-import gui.hashmap.panel.formatter.IntegerFormatter;
+import gui.hashmap.panel.key.InputFieldListener;
 
 import javax.swing.*;
-import javax.swing.text.NumberFormatter;
 import java.awt.*;
-import java.text.NumberFormat;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ControlPanel extends GUIPanel {
@@ -44,8 +41,6 @@ public class ControlPanel extends GUIPanel {
     private static final int TEXTFIELD_WEIGHTY = 0;
     private static final Insets OBJECT_INSETS = new Insets(5, 5, 5, 5);
 
-
-
     public ControlPanel(LayoutManager layoutManager, HashMapPanel hashMapPanel) {
         super(layoutManager);
         this.hashMapPanel = hashMapPanel;
@@ -59,13 +54,10 @@ public class ControlPanel extends GUIPanel {
 
     private void initLayout(){
         setSize(200, 1000);
-        NumberFormatter numberFormatter = createNumberFormatter();
-        JFormattedTextField keyTextField = new JFormattedTextField(numberFormatter);
-        JFormattedTextField valueTextField = new JFormattedTextField(numberFormatter);
+        JTextField keyTextField = new JTextField();
+        JTextField valueTextField = new JTextField();
 
         DrawImageListener drawImageListener = new DrawImageListener(hashMapPanel, map);
-        KeyFieldListener keyFieldListener = new KeyFieldListener(keyTextField);
-        KeyValueFieldListener keyValueFieldListener = new KeyValueFieldListener(keyTextField, valueTextField);
         PutListener putListener = new PutListener(keyTextField, valueTextField, map);
         GetListener getListener = new GetListener(keyTextField, valueTextField, map);
         RemoveListener removeListener = new RemoveListener(keyTextField, map);
@@ -78,11 +70,11 @@ public class ControlPanel extends GUIPanel {
         JButton clearButton = new JButton("Clear");
         JButton sizeButton = new JButton("Size");
 
-        /*putButton.setBackground(Color.GREEN);
-        getButton.setBackground(Color.GREEN);
-        removeButton.setBackground(Color.RED);
-        clearButton.setBackground(Color.RED);
-        sizeButton.setBackground(Color.BLUE);*/
+        InputFieldListener keyInputFieldListener = new InputFieldListener(List.of(keyTextField), List.of(removeButton, getButton));
+        keyTextField.addKeyListener(keyInputFieldListener);
+        InputFieldListener keyAndValueInputFieldListener = new InputFieldListener(List.of(keyTextField, valueTextField), List.of(putButton));
+        keyTextField.addKeyListener(keyAndValueInputFieldListener);
+        valueTextField.addKeyListener(keyAndValueInputFieldListener);
 
         keyTextField.setPreferredSize(new Dimension(120, 20));
         valueTextField.setPreferredSize(new Dimension(120, 20));
@@ -95,16 +87,12 @@ public class ControlPanel extends GUIPanel {
 
         putButton.addActionListener(drawImageListener);
         putButton.addActionListener(putListener);
-        putButton.addActionListener(keyValueFieldListener);
         removeButton.addActionListener(drawImageListener);
         removeButton.addActionListener(removeListener);
-        removeButton.addActionListener(keyFieldListener);
         clearButton.addActionListener(drawImageListener);
         clearButton.addActionListener(clearListener);
         getButton.addActionListener(getListener);
-        getButton.addActionListener(keyFieldListener);
         sizeButton.addActionListener(sizeListener);
-
 
 
         GridBagLayout panelLayout = new GridBagLayout();
@@ -257,11 +245,5 @@ public class ControlPanel extends GUIPanel {
         add(sizeButton);
 
         setLayout(panelLayout);
-    }
-
-    private NumberFormatter createNumberFormatter(){
-        NumberFormat numberFormat = NumberFormat.getIntegerInstance();
-        numberFormat.setGroupingUsed(false);
-        return new IntegerFormatter(numberFormat);
     }
 }
