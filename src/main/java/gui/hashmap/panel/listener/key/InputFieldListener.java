@@ -1,4 +1,4 @@
-package gui.hashmap.panel.key;
+package gui.hashmap.panel.listener.key;
 
 import javax.swing.*;
 import javax.swing.text.JTextComponent;
