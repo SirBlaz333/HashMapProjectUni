@@ -14,10 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ControlPanel extends GUIPanel {
-    private final HashMapPanel hashMapPanel;
-    private final Map<Integer, Integer> map;
-
+public class ControlPanel extends JPanel {
     private static final int TOP_BUTTON_ROW = 2;
     private static final int BUTTON_COLUMN = 0;
     private static final int BUTTON_GRID_WIDTH = 2;
@@ -41,6 +38,9 @@ public class ControlPanel extends GUIPanel {
     private static final int TEXTFIELD_WEIGHTY = 0;
     private static final Insets OBJECT_INSETS = new Insets(5, 5, 5, 5);
 
+    private final HashMapPanel hashMapPanel;
+    private final Map<Integer, Integer> map;
+
     public ControlPanel(LayoutManager layoutManager, HashMapPanel hashMapPanel) {
         super(layoutManager);
         this.hashMapPanel = hashMapPanel;
@@ -49,11 +49,7 @@ public class ControlPanel extends GUIPanel {
         initLayout();
     }
 
-    @Override
-    protected void init() {
-    }
-
-    private void initLayout(){
+    private void initLayout() {
         setSize(200, 1000);
         JTextField keyTextField = new JTextField();
         JTextField valueTextField = new JTextField();
