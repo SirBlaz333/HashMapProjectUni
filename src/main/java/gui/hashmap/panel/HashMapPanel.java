@@ -6,15 +6,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Map;
 
-public class HashMapPanel extends GUIPanel {
-    private JLabel imageLabel;
-    private ImageProducer imageProducer;
+public class HashMapPanel extends JPanel {
+    private final JLabel imageLabel;
+    private final ImageProducer imageProducer;
     public HashMapPanel(LayoutManager layoutManager) {
         super(layoutManager);
-    }
-
-    @Override
-    protected void init() {
         imageLabel = new JLabel();
         imageLabel.setHorizontalAlignment(SwingConstants.CENTER);
         this.add(imageLabel, BorderLayout.CENTER);

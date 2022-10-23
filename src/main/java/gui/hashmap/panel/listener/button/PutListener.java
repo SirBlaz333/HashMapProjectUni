@@ -1,5 +1,7 @@
 package gui.hashmap.panel.listener.button;
 
+import gui.hashmap.panel.listener.button.error.ParsingExceptionMessageDialog;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,8 +20,12 @@ public class PutListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Integer key = Integer.parseInt(keyTextField.getText());
-        Integer value = Integer.parseInt(valueTextField.getText());
-        map.put(key, value);
+        try{
+            Integer key = Integer.parseInt(keyTextField.getText());
+            Integer value = Integer.parseInt(valueTextField.getText());
+            map.put(key, value);
+        } catch (NumberFormatException exception){
+            ParsingExceptionMessageDialog.print();
+        }
     }
 }
