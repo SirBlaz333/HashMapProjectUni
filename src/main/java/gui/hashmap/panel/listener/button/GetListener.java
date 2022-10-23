@@ -1,5 +1,7 @@
 package gui.hashmap.panel.listener.button;
 
+import gui.hashmap.panel.listener.button.error.ParsingExceptionMessageDialog;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,15 +18,19 @@ public class GetListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Integer key = Integer.parseInt(keyTextField.getText());
+        try{
+            Integer key = Integer.parseInt(keyTextField.getText());
 
-        if (map.containsKey(key)) {
-            Integer value = map.get(key);
-            JOptionPane.showMessageDialog(null, "HashMap contains: " + value +
-                    " at the key: " + key, "Get info", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(null, "There is no value for the key: " + key,
-                    "Get info", JOptionPane.ERROR_MESSAGE);
+            if (map.containsKey(key)) {
+                Integer value = map.get(key);
+                JOptionPane.showMessageDialog(null, "HashMap contains: " + value +
+                        " at the key: " + key, "Get info", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "There is no value for the key: " + key,
+                        "Get info", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (NumberFormatException exception){
+            ParsingExceptionMessageDialog.print();
         }
     }
 }
