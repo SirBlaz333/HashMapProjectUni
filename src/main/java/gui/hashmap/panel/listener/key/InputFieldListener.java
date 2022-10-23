@@ -27,7 +27,7 @@ public class InputFieldListener implements java.awt.event.KeyListener {
     public void keyReleased(KeyEvent e) {
         boolean isPressable = textFields.stream()
                 .map(JTextComponent::getText)
-                .reduce(true, (aBoolean, s) -> aBoolean && fieldIsCorrect(s), Boolean::logicalAnd);
+                .reduce(true, (aBoolean, s) -> aBoolean && !s.isBlank(), Boolean::logicalAnd);
         if(!isPressable){
             setButtonsEnabled(false);
             return;
@@ -38,19 +38,6 @@ public class InputFieldListener implements java.awt.event.KeyListener {
     private void setButtonsEnabled(boolean value){
         for(JButton button : buttonList){
             button.setEnabled(value);
-        }
-    }
-
-    private boolean fieldIsCorrect(String s){
-        return textIsInteger(s) && !s.isBlank();
-    }
-
-    private boolean textIsInteger(String text){
-        try {
-            Integer.parseInt(text);
-            return true;
-        } catch (NumberFormatException e){
-            return false;
         }
     }
 }
