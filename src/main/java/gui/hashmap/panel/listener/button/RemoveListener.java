@@ -1,5 +1,7 @@
 package gui.hashmap.panel.listener.button;
 
+import gui.hashmap.panel.listener.button.error.ParsingExceptionMessageDialog;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,12 +18,11 @@ public class RemoveListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Integer key = Integer.parseInt(keyTextField.getText());
-        if (map.containsKey(key)) {
+        try{
+            Integer key = Integer.parseInt(keyTextField.getText());
             map.remove(key);
-        } else {
-            JOptionPane.showMessageDialog(null, "There is no value for the key: " + key,
-                    "Remove error", JOptionPane.ERROR_MESSAGE);
+        } catch (NumberFormatException exception){
+            ParsingExceptionMessageDialog.print();
         }
     }
 }
