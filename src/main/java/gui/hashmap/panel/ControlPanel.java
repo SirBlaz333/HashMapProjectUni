@@ -1,12 +1,12 @@
 package gui.hashmap.panel;
 
-import gui.hashmap.panel.button.listener.ClearListener;
-import gui.hashmap.panel.button.listener.DrawImageListener;
-import gui.hashmap.panel.button.listener.GetListener;
-import gui.hashmap.panel.button.listener.PutListener;
-import gui.hashmap.panel.button.listener.RemoveListener;
-import gui.hashmap.panel.button.listener.SizeListener;
-import gui.hashmap.panel.key.InputFieldListener;
+import gui.hashmap.panel.listener.button.ClearListener;
+import gui.hashmap.panel.listener.button.DrawImageListener;
+import gui.hashmap.panel.listener.button.GetListener;
+import gui.hashmap.panel.listener.button.PutListener;
+import gui.hashmap.panel.listener.button.RemoveListener;
+import gui.hashmap.panel.listener.button.SizeListener;
+import gui.hashmap.panel.listener.key.InputFieldListener;
 
 import javax.swing.*;
 import java.awt.*;

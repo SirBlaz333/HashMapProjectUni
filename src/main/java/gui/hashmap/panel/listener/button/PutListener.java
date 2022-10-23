@@ -1,4 +1,4 @@
-package gui.hashmap.panel.button.listener;
+package gui.hashmap.panel.listener.button;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
