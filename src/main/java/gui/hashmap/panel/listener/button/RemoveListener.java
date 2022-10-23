@@ -20,7 +20,12 @@ public class RemoveListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         try{
             Integer key = Integer.parseInt(keyTextField.getText());
-            map.remove(key);
+            if (map.containsKey(key)) {
+                map.remove(key);
+            } else {
+                JOptionPane.showMessageDialog(null, "There is no value for the key: " + key,
+                        "Remove error", JOptionPane.ERROR_MESSAGE);
+            }
         } catch (NumberFormatException exception){
             ParsingExceptionMessageDialog.print();
         }
