@@ -45,6 +45,7 @@ public class ControlPanel extends GUIPanel {
         super(layoutManager);
         this.hashMapPanel = hashMapPanel;
         this.map = new HashMap<>();
+        hashMapPanel.drawImage(map);
         initLayout();
     }
 
