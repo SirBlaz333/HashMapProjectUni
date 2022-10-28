@@ -94,7 +94,7 @@ public class ControlPanel extends JPanel {
 
         GridBagLayout panelLayout = new GridBagLayout();
 
-        GridBagConstraints keyLabelCons = new GridBagConstraints(
+        GridBagConstraints keyLabelCons = new GridBagConstraints( // обмеження для keyLabel
                 LABEL_COLUMN,
                 TOP_LABEL_ROW,
                 LABEL_GRID_WIDTH,
@@ -108,7 +108,7 @@ public class ControlPanel extends JPanel {
                 ELEMENT_PADY
         );
 
-        GridBagConstraints valueLabelCons = new GridBagConstraints(
+        GridBagConstraints valueLabelCons = new GridBagConstraints(//обмеження для valueLabel
                 LABEL_COLUMN,
                 TOP_LABEL_ROW + 1,
                 LABEL_GRID_WIDTH,
@@ -122,7 +122,7 @@ public class ControlPanel extends JPanel {
                 ELEMENT_PADY
         );
 
-        GridBagConstraints keyTextFieldCons = new GridBagConstraints(
+        GridBagConstraints keyTextFieldCons = new GridBagConstraints(//обмеження для keyTextField
                 TEXTFIELD_COLUMN,
                 TOP_TEXTFIELD_ROW,
                 TEXTFIELD_GRID_WIDTH,
@@ -136,7 +136,7 @@ public class ControlPanel extends JPanel {
                 ELEMENT_PADY
         );
 
-        GridBagConstraints valueTextFieldCons = new GridBagConstraints(
+        GridBagConstraints valueTextFieldCons = new GridBagConstraints(//обмеження для valueTextField
                 TEXTFIELD_COLUMN,
                 TOP_TEXTFIELD_ROW + 1,
                 TEXTFIELD_GRID_WIDTH,
@@ -150,7 +150,7 @@ public class ControlPanel extends JPanel {
                 ELEMENT_PADY
         );
 
-        GridBagConstraints putButtonCons = new GridBagConstraints(
+        GridBagConstraints putButtonCons = new GridBagConstraints(//обмеження для putButton
                 BUTTON_COLUMN,
                 TOP_BUTTON_ROW,
                 BUTTON_GRID_WIDTH,
@@ -165,7 +165,7 @@ public class ControlPanel extends JPanel {
         );
 
 
-        GridBagConstraints getButtonCons = new GridBagConstraints(
+        GridBagConstraints getButtonCons = new GridBagConstraints(//обмеження для getButton
                 BUTTON_COLUMN,
                 TOP_BUTTON_ROW + 1,
                 BUTTON_GRID_WIDTH,
@@ -179,7 +179,7 @@ public class ControlPanel extends JPanel {
                 ELEMENT_PADY
         );
 
-        GridBagConstraints removeButtonCons = new GridBagConstraints(
+        GridBagConstraints removeButtonCons = new GridBagConstraints(//обмеження для removeButton
                 BUTTON_COLUMN,
                 TOP_BUTTON_ROW + 2,
                 BUTTON_GRID_WIDTH,
@@ -193,7 +193,7 @@ public class ControlPanel extends JPanel {
                 ELEMENT_PADY
         );
 
-        GridBagConstraints clearButtonCons = new GridBagConstraints(
+        GridBagConstraints clearButtonCons = new GridBagConstraints(//обмеження для clearButton
                 BUTTON_COLUMN,
                 TOP_BUTTON_ROW + 3,
                 BUTTON_GRID_WIDTH,
@@ -206,7 +206,7 @@ public class ControlPanel extends JPanel {
                 ELEMENT_PADX,
                 ELEMENT_PADY
         );
-        GridBagConstraints sizeButtonCons = new GridBagConstraints(
+        GridBagConstraints sizeButtonCons = new GridBagConstraints(//обмеження для sizeButton
                 BUTTON_COLUMN,
                 TOP_BUTTON_ROW + 4,
                 BUTTON_GRID_WIDTH,
@@ -220,6 +220,7 @@ public class ControlPanel extends JPanel {
                 ELEMENT_PADY
         );
 
+        //додавання обмежень до елементів ControlPanel
         panelLayout.setConstraints(keyLabel, keyLabelCons);
         panelLayout.setConstraints(putButton, putButtonCons);
         panelLayout.setConstraints(keyTextField, keyTextFieldCons);
