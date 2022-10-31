@@ -6,13 +6,15 @@ import java.awt.*;
 
 /**
  * Клас для прямокутника.
- * Містить поля side - сторона прямокутника, color - колір меж прямокутника.
  */
 public class RectangleDrawer implements Figure{
     private final int side;
     private Color color;
 
-
+    /**
+     * @param side сторона прямокутника
+     * @param color колір прямокутника
+     */
     public RectangleDrawer(int side, Color color) {
         this.side = side;
         this.color = color;
