@@ -28,19 +28,18 @@ public class HashMapGUI extends JFrame {
     public HashMapGUI() throws HeadlessException {
         super(TITLE);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //ініціалізуємо поля
         hashmapPanel = new HashMapPanel(new GridLayout());
         controlPanel = new ControlPanel(new GridLayout(), hashmapPanel);
-        init();
-    }
-
-    private void init() {
         initLayout();
     }
 
+    //ініціалізація розмітки
     private void initLayout() {
         getContentPane().setLayout(new GridBagLayout());
         Insets panelInsets = new Insets(DEFAULT_INSET, DEFAULT_INSET, DEFAULT_INSET, DEFAULT_INSET);
 
+        //задаємо обмеження для панелі з зображенням
         GridBagConstraints hashmapPanelGridBagConstraints = new GridBagConstraints(
                 HASHMAP_PANEL_COLUMN,
                 PANEL_ROW,
@@ -54,6 +53,7 @@ public class HashMapGUI extends JFrame {
                 PAD_X,
                 PAD_Y);
 
+        //задаємо обмеження для панелі керування
         GridBagConstraints controlPanelGridBagConstraints = new GridBagConstraints(
                 CONTROL_PANEL_COLUMN,
                 PANEL_ROW,
@@ -67,6 +67,7 @@ public class HashMapGUI extends JFrame {
                 PAD_X,
                 PAD_Y);
 
+        //додавання смуг прокручування
         JScrollPane scrollableHashMapPanel = new JScrollPane(hashmapPanel);
         scrollableHashMapPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollableHashMapPanel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);

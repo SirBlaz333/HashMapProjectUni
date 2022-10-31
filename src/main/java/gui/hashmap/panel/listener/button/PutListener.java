@@ -21,6 +21,7 @@ public class PutListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         try{
+            //отримуємо ключ та значення, та кладемо їх у мапу
             Integer key = Integer.parseInt(keyTextField.getText());
             Integer value = Integer.parseInt(valueTextField.getText());
             map.put(key, value);

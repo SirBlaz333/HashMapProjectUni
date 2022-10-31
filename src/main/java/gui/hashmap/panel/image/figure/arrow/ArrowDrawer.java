@@ -4,19 +4,40 @@ import gui.hashmap.panel.image.figure.Figure;
 
 import java.awt.*;
 
+/**
+ * ArrowDrawer для малювання стрілки на екрані
+ */
 public class ArrowDrawer implements Figure {
+    // ширина стрілки
     private final int width;
+
+    // висота стрілки
     private final int height;
+
+    // колір фону стрілки
     private final Color color;
 
+    /**
+     * Конструктор
+     * @param height висота стрілки
+     * @param width ширина стрілки
+     * @param color колір стрілки
+     */
     public ArrowDrawer(int width, int height, Color color) {
         this.width = width;
         this.height = height;
         this.color = color;
     }
 
+    /**
+     * Метод, що реалізує малювання стрілки
+     * @param graphics графічний об'єкт
+     * @param x координата х лівої верхньої сторони
+     * @param y координата y лівої верхньої сторони
+     */
     @Override
     public void draw(Graphics graphics, int x, int y) {
+        // створюємо полігон у формі стрілки із точок
         Polygon polygon = new Polygon(
                 new int[]{
                         x + (int) (0.75 * width),
@@ -40,7 +61,10 @@ public class ArrowDrawer implements Figure {
                 },
                 8);
 
+        // встановлюємо колір
         graphics.setColor(color);
+
+        // малюємо стрілку
         graphics.drawPolygon(polygon);
         graphics.fillPolygon(polygon);
     }

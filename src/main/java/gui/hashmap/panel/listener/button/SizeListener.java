@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
+/**
+ * Клас реалізує подію натискання кнопки Size: повертає розмір хеш-мапи у діалогове вікно.
+ */
 
 public class SizeListener implements ActionListener {
     private final Map<Integer, Integer> map;
