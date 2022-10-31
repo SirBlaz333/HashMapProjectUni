@@ -5,7 +5,7 @@ import gui.hashmap.panel.image.figure.Figure;
 import java.awt.*;
 
 /**
- *Клас для прямокутника.
+ * Клас для прямокутника.
  * Містить поля side - сторона прямокутника, color - колір меж прямокутника.
  */
 public class RectangleDrawer implements Figure{
