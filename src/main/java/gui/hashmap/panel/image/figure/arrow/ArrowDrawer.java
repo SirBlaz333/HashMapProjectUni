@@ -4,9 +4,15 @@ import gui.hashmap.panel.image.figure.Figure;
 
 import java.awt.*;
 
+// клас ArrowDrawer малює стрілку на екрані
 public class ArrowDrawer implements Figure {
+    // ширина стрілки
     private final int width;
+
+    // висота стрілки
     private final int height;
+
+    // колір фону стрілки
     private final Color color;
 
     public ArrowDrawer(int width, int height, Color color) {
@@ -15,6 +21,7 @@ public class ArrowDrawer implements Figure {
         this.color = color;
     }
 
+    // перевантажений метод для малювання стрілки за координатами лівого верхньої сторони
     @Override
     public void draw(Graphics graphics, int x, int y) {
         Polygon polygon = new Polygon(
