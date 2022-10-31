@@ -6,13 +6,17 @@ import java.awt.*;
 
 /**
  * Клас коло.
- * Містить поля: radius - радіус кола, color - колір обводки кола.
  */
 
 public class CircleDrawer implements Figure {
     private int radius;
     private Color color;
 
+    /**
+     * Конструктор кола.
+     * @param radius радіус кола
+     * @param color колір контуру кола
+     */
     public CircleDrawer(int radius, Color color) {
         this.radius = radius;
         this.color = color;
