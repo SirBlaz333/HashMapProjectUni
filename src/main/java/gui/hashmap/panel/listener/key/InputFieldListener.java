@@ -25,9 +25,11 @@ public class InputFieldListener implements java.awt.event.KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
+        //вираховуємо, чи є хоча б одне незаповнене поле
         boolean isPressable = textFields.stream()
                 .map(JTextComponent::getText)
                 .reduce(true, (aBoolean, s) -> aBoolean && !s.isBlank(), Boolean::logicalAnd);
+        //якщо є незаповнене поле, то заблокувати кнопки
         if(!isPressable){
             setButtonsEnabled(false);
             return;
