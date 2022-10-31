@@ -24,8 +24,8 @@ public class RemoveListener implements ActionListener {
         try{
             Integer key = Integer.parseInt(keyTextField.getText());     //зчитування даних
             if (map.containsKey(key)) {
-                map.remove(key);
-            } else {    //виведення повідомлення про відсутність елементу з введеним ключем
+                map.remove(key);         // видалення елемента
+            } else {    //виведення повідомлення про відсутність елемента з введеним ключем
                 JOptionPane.showMessageDialog(null, "There is no value for the key: " + key,
                         "Remove error", JOptionPane.ERROR_MESSAGE);
             }
