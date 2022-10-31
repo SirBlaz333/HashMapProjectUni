@@ -7,6 +7,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
 
+/**
+ * Клас реалізує подію натиснення кнопки Remove: видалення елементу з HashMap.
+ */
 public class RemoveListener implements ActionListener {
     private final JTextField keyTextField;
     private final Map<Integer, Integer> map;
@@ -19,15 +22,15 @@ public class RemoveListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         try{
-            Integer key = Integer.parseInt(keyTextField.getText());
+            Integer key = Integer.parseInt(keyTextField.getText());     //зчитування даних
             if (map.containsKey(key)) {
-                map.remove(key);
-            } else {
+                map.remove(key);         // видалення елемента
+            } else {    //виведення повідомлення про відсутність елемента з введеним ключем
                 JOptionPane.showMessageDialog(null, "There is no value for the key: " + key,
                         "Remove error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (NumberFormatException exception){
-            ParsingExceptionMessageDialog.print();
+            ParsingExceptionMessageDialog.print(); //виведення повідомлення про помилку
         }
     }
 }
