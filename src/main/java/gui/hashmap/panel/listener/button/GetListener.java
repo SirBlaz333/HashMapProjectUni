@@ -8,13 +8,26 @@ import java.awt.event.ActionListener;
 import java.util.Map;
 
 public class GetListener implements ActionListener {
+    // текстове поле для ключа
     private final JTextField keyTextField;
+
+    // hashmap
     private final Map<Integer, Integer> map;
 
+    /**
+     * Конструктор
+     * @param keyTextField текстове поле для ключа
+     * @param map hashmap
+     */
     public GetListener(JTextField keyTextField, Map<Integer, Integer> map) {
         this.keyTextField = keyTextField;
         this.map = map;
     }
+
+    /**
+     * Цей метод викликається при натисканні Get
+     * @param e event-подія
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {
