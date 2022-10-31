@@ -94,7 +94,7 @@ public class ImageProducer {
                 list = new ArrayList<>();
             }
             //добавляємо значення до списку
-            list.add(map.get(key));
+            list.add(key);
             //добавляємо список до мапи залишків
             remainderMap.put(remainder, list);
         }
