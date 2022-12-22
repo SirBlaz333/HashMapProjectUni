@@ -12,7 +12,7 @@ public interface TextDrawer{
      * @param graphics графічний об'єкт
      * @param x координата х
      * @param y координата y
-     * @param key число
+     * @param entry входження мапи(ключ та значення)
      */
     void draw(Graphics graphics, int x, int y, Map.Entry<Integer, Integer> entry);
 }
