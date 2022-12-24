@@ -18,7 +18,7 @@ import java.util.Set;
  * Клас, що слугує для створення зображення з мапи
  */
 public class ImageProducer {
-    private static final int DEFAULT_SIZE = 4;
+    private static final int DEFAULT_SIZE = 16;
     private static final double LOAD_FACTOR = 0.75;
     private static final int MULTIPLICATION = 2;
     public static final int FONT_SIZE = 20;
@@ -54,7 +54,7 @@ public class ImageProducer {
         int arraySize = calculateArraySize(map.keySet());
         //отримаємо мапу, що зберігає список даних, які лежать в певній комірці масиву
         //номер комірки масиву - це остача ділення хеш-значення ключа на розмір масиву
-        Map<Integer, List<Integer>> remainderMap = toRemainderMap(map, arraySize);
+        Map<Integer, List<Map.Entry<Integer, Integer>>> remainderMap = toRemainderMap(map, arraySize);
         //отримаємо значення найдовшого масиву. Якщо такого значення немає, то отримаємо 0
         int longestListSize = remainderMap.values()
                 .stream()
@@ -80,21 +80,21 @@ public class ImageProducer {
         return bufferedImage;
     }
 
-    private Map<Integer, List<Integer>> toRemainderMap(Map<Integer, Integer> map, int arraySize) {
-        Map<Integer, List<Integer>> remainderMap = new HashMap<>();
+    private Map<Integer, List<Map.Entry<Integer, Integer>>> toRemainderMap(Map<Integer, Integer> map, int arraySize) {
+        Map<Integer, List<Map.Entry<Integer, Integer>>> remainderMap = new HashMap<>();
         for (Integer key : map.keySet()) {
             //вираховуємо значення хеш-коду ключа
             int hash = key.hashCode();
             //вираховуємо остачу від ділення хеш-коду ключа на розмір масиву
             int remainder = Math.floorMod(hash, arraySize);
             //отримаємо зв'язний список
-            List<Integer> list = remainderMap.get(remainder);
+            List<Map.Entry<Integer, Integer>> list = remainderMap.get(remainder);
             //якщо його немає то створюємо новий
             if (list == null) {
                 list = new ArrayList<>();
             }
             //добавляємо значення до списку
-            list.add(key);
+            list.add(new Entry<>(key, map.get(key)));
             //добавляємо список до мапи залишків
             remainderMap.put(remainder, list);
         }
@@ -111,7 +111,7 @@ public class ImageProducer {
         return size;
     }
 
-    private void drawMap(Graphics graphics, Map<Integer, List<Integer>> remainderMap, int arraySize) {
+    private void drawMap(Graphics graphics, Map<Integer, List<Map.Entry<Integer, Integer>>> remainderMap, int arraySize) {
         int x = blockSize;
         int y = blockSize;
         for (int i = 0; i < arraySize; i++) {
@@ -126,13 +126,13 @@ public class ImageProducer {
         }
     }
 
-    private void drawList(Graphics graphics, List<Integer> list, int x, int y) {
+    private void drawList(Graphics graphics, List<Map.Entry<Integer, Integer>> list, int x, int y) {
         for (int i = 0; i < list.size(); i++) {
             //отримаємо число що потрібно намалювати
-            Integer integer = list.get(i);
+            Map.Entry<Integer, Integer> entry = list.get(i);
             //малюємо число в крузі
             circleDrawer.draw(graphics, x, y);
-            textDrawer.draw(graphics, x, y, integer);
+            textDrawer.draw(graphics, x, y, entry);
             //переходимо до наступного елементу
             x += blockSize;
             //якщо це не останній елемент, то малюємо стрілку і збільшуємо ще раз х
@@ -140,6 +140,31 @@ public class ImageProducer {
                 arrowDrawer.draw(graphics, x, y);
             }
             x += blockSize;
+        }
+    }
+
+    private static class Entry<K, V> implements Map.Entry<K, V>{
+        private final K key;
+        private V value;
+        public Entry(K key, V value){
+            this.key = key;
+            this.value = value;
+        }
+        @Override
+        public K getKey() {
+            return key;
+        }
+
+        @Override
+        public V getValue() {
+            return value;
+        }
+
+        @Override
+        public V setValue(V value) {
+            V oldValue = this.value;
+            this.value = value;
+            return oldValue;
         }
     }
 }
