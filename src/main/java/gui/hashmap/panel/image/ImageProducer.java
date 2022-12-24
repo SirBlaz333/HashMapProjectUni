@@ -18,7 +18,7 @@ import java.util.Set;
  * Клас, що слугує для створення зображення з мапи
  */
 public class ImageProducer {
-    private static final int DEFAULT_SIZE = 4;
+    private static final int DEFAULT_SIZE = 16;
     private static final double LOAD_FACTOR = 0.75;
     private static final int MULTIPLICATION = 2;
     public static final int FONT_SIZE = 20;
